@@ -2,7 +2,7 @@
 * @Author: Ali
 * @Date:   2016-08-20 05:26:39
 * @Last Modified by:   Ali
-* @Last Modified time: 2016-08-20 11:31:53
+* @Last Modified time: 2016-08-20 14:40:08
 */
 /*This JS file is based on up and running HTML5 book*/
 
@@ -13,10 +13,18 @@ function html5checker_init(){
     var html5checker = {
         canvas : false,
         canvastext: false,
-        canplayvideo: false
+        canplayvideo: false,
+        canplaymp4: "",
+        canplayogg: "",
+        canplaywebm: ""
+
     }
     console.log( "Canvas support: " html5checker.canvas );
     console.log( "Canvas text support: " html5checker.canvastext );
+    console.log( "Video support: " html5checker.canplayvideo );
+    console.log( "Video/MP4 support: " html5checker.canplaymp4 );
+    console.log( "Video/OGG support: " html5checker.canplayogg );
+    console.log( "Video/Webm support: " html5checker.canplaywebm );
     }
 
 function supports_canvas(){
@@ -37,17 +45,26 @@ function supports_canvas_text() {
         if ( typeof context.fillText == 'function') {
             html5checker.canvastext == true;
         }
-        else {}
     }
 }
 
 function support_videoplay(){
-    /*check if the browser is capable of playing video
+    /*It checks if the browser is capable of playing video
     checking method : creating element, checking if certain property exist for it or not.
     Here, it's canPlayType */
     if ( !!document.createElement('video').cabPlayType ) {
         html5checker.canplayvideo == true;
     }
-    else {}
+}
 
+function support_videoformat(){
+    /*It checka if the browser is capable of running following formats
+    MP4, OGG
+    checking method : creating element, check if certain methods are in it, then call the method by passing certain values to them
+    */
+    if ( !html5checker.canplayvideo ){
+        html5checker.canplaymp4 == document.createElement("video").canPlayType('video/mp4; codecs="avc1.42E01E, mp4a.40.2"');
+        html5checker.canplayogg == document.createElement("video").canPlayType('video/ogg; codecs="theora, vorbis"');
+        html5checker.canplaywebm == document.createElement("video").canPlayType('video/webm; codecs="vp8, vorbis"');
+    }
 }
