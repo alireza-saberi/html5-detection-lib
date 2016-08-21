@@ -2,7 +2,7 @@
 * @Author: Ali
 * @Date:   2016-08-20 05:26:39
 * @Last Modified by:   Ali
-* @Last Modified time: 2016-08-21 15:39:20
+* @Last Modified time: 2016-08-21 16:07:46
 */
 /*This JS file is based on up and running HTML5 book*/
 
@@ -34,7 +34,8 @@ function html5checker_init(){
         time: false,
         datetime: false,
         datetime_local: false,
-        placeholder: false
+        placeholder: false,
+        autofocus: false
 
     };
 
@@ -66,7 +67,7 @@ function html5checker_init(){
     console.log( "datetime-local: " + html5checker.datetime_local );
 
     console.log( "Input placeholder: " + html5checker.placeholder );
-
+    console.log( "Input autofocus: " + html5checker.autofocus );
     }
 
 function supports_canvas(){
@@ -188,3 +189,9 @@ function support_inputPlaceholder() {
     }
 }
 
+function support_inputAutofocus() {
+    var input = document.createElement("input");
+    if ( "autofocus" in input) {
+        html5checker.autofocus == true;
+    }
+}
