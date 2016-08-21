@@ -2,7 +2,7 @@
 * @Author: Ali
 * @Date:   2016-08-20 05:26:39
 * @Last Modified by:   Ali
-* @Last Modified time: 2016-08-21 16:07:46
+* @Last Modified time: 2016-08-21 16:32:30
 */
 /*This JS file is based on up and running HTML5 book*/
 
@@ -35,9 +35,22 @@ function html5checker_init(){
         datetime: false,
         datetime_local: false,
         placeholder: false,
-        autofocus: false
-
+        autofocus: false,
+        microdata: false
     };
+
+    supports_canvas();
+    supports_canvas_text();
+    support_videoplay();
+    support_videoformat();
+    support_localStorage();
+    support_webWorker();
+    support_offline();
+    support_geolocation();
+    support_inputAttributes();
+    support_inputPlaceholder();
+    support_inputAutofocus();
+    support_microdata();
 
     console.log( "Canvas support: " + html5checker.canvas );
     console.log( "Canvas text support: " + html5checker.canvastext );
@@ -47,8 +60,9 @@ function html5checker_init(){
     console.log( "Video/Webm support: " + html5checker.canplaywebm );
     console.log( "localStorage support: " + html5checker.localStorage );
     console.log( "Webworker support: " + html5checker.webWorker );
-    console.log( "offline support: " + html5checker.applicationCashe );
-    console.log( "geolocation support: " + html5checker.geolocation );
+    console.log( "Offline support: " + html5checker.applicationCashe );
+    console.log( "Geolocation support: " + html5checker.geolocation );
+    console.log( "Microdata support: " + html5checker.microdata );
 
     // the inputs 13 attributes
     console.log( "Checking new input attributes ..." );
@@ -68,6 +82,8 @@ function html5checker_init(){
 
     console.log( "Input placeholder: " + html5checker.placeholder );
     console.log( "Input autofocus: " + html5checker.autofocus );
+
+
     }
 
 function supports_canvas(){
@@ -193,5 +209,11 @@ function support_inputAutofocus() {
     var input = document.createElement("input");
     if ( "autofocus" in input) {
         html5checker.autofocus == true;
+    }
+}
+
+function support_microdata() {
+    if ( !!document.getItems ) {
+        html5checker.microdata == true;
     }
 }
