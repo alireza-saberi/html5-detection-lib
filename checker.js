@@ -2,7 +2,7 @@
 * @Author: Ali
 * @Date:   2016-08-20 05:26:39
 * @Last Modified by:   Ali
-* @Last Modified time: 2016-08-20 14:40:08
+* @Last Modified time: 2016-08-21 10:22:48
 */
 /*This JS file is based on up and running HTML5 book*/
 
@@ -16,7 +16,8 @@ function html5checker_init(){
         canplayvideo: false,
         canplaymp4: "",
         canplayogg: "",
-        canplaywebm: ""
+        canplaywebm: "",
+        localStorage: false
 
     }
     console.log( "Canvas support: " html5checker.canvas );
@@ -58,7 +59,7 @@ function support_videoplay(){
 }
 
 function support_videoformat(){
-    /*It checka if the browser is capable of running following formats
+    /*It checks if the browser is capable of running following formats
     MP4, OGG
     checking method : creating element, check if certain methods are in it, then call the method by passing certain values to them
     */
@@ -68,3 +69,12 @@ function support_videoformat(){
         html5checker.canplaywebm == document.createElement("video").canPlayType('video/webm; codecs="vp8, vorbis"');
     }
 }
+
+function support_localStorage(){
+    /*It checks if the browser is supporting local storage by checking window object local storage
+    checking method: if localStorage exists in window object*/
+    if ( window.localStorage && 'localStorage' in window !== null ) {
+        html5checker.localStorage == true;
+    }
+}
+
