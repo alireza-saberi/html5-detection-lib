@@ -2,43 +2,43 @@
 * @Author: Ali
 * @Date:   2016-08-20 05:26:39
 * @Last Modified by:   Ali
-* @Last Modified time: 2016-08-21 16:32:30
+* @Last Modified time: 2016-08-21 16:52:55
 */
 /*This JS file is based on up and running HTML5 book*/
+
+var html5checker = {
+    canvas : false,
+    canvastext: false,
+    canplayvideo: false,
+    canplaymp4: "",
+    canplayogg: "",
+    canplaywebm: "",
+    localStorage: false,
+    webWorker: false,
+    applicationCashe: false,
+    geolocation : false,
+    search: false,
+    number: false,
+    range: false,
+    color:  false,
+    tel: false,
+    url: false,
+    email: false,
+    date: false,
+    month: false,
+    week: false,
+    time: false,
+    datetime: false,
+    datetime_local: false,
+    placeholder: false,
+    autofocus: false,
+    microdata: false
+};
 
 html5checker_init();
 
 function html5checker_init(){
     console.log( "checking different HTML5 features ..." );
-    var html5checker = {
-        canvas : false,
-        canvastext: false,
-        canplayvideo: false,
-        canplaymp4: "",
-        canplayogg: "",
-        canplaywebm: "",
-        localStorage: false,
-        webWorker: false,
-        applicationCashe: false,
-        geolocation : false,
-        search: false,
-        number: false,
-        range: false,
-        color:  false,
-        tel: false,
-        url: false,
-        email: false,
-        date: false,
-        month: false,
-        week: false,
-        time: false,
-        datetime: false,
-        datetime_local: false,
-        placeholder: false,
-        autofocus: false,
-        microdata: false
-    };
-
     supports_canvas();
     supports_canvas_text();
     support_videoplay();
