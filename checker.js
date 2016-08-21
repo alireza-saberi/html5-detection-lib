@@ -2,7 +2,7 @@
 * @Author: Ali
 * @Date:   2016-08-20 05:26:39
 * @Last Modified by:   Ali
-* @Last Modified time: 2016-08-21 15:07:58
+* @Last Modified time: 2016-08-21 15:23:33
 */
 /*This JS file is based on up and running HTML5 book*/
 
@@ -36,32 +36,33 @@ function html5checker_init(){
         datetime_local: false
 
     }
-    console.log( "Canvas support: " html5checker.canvas );
-    console.log( "Canvas text support: " html5checker.canvastext );
-    console.log( "Video support: " html5checker.canplayvideo );
-    console.log( "Video/MP4 support: " html5checker.canplaymp4 );
-    console.log( "Video/OGG support: " html5checker.canplayogg );
-    console.log( "Video/Webm support: " html5checker.canplaywebm );
-    console.log( "localStorage support: " html5checker.localStorage );
-    console.log( "Webworker support: " html5checker.webWorker );
-    console.log( "offline support: " html5checker.applicationCashe );
-    console.log( "geolocation support: " html5checker.geolocation );
+
+    console.log( "Canvas support: " + html5checker.canvas );
+    console.log( "Canvas text support: " + html5checker.canvastext );
+    console.log( "Video support: " + html5checker.canplayvideo );
+    console.log( "Video/MP4 support: " + html5checker.canplaymp4 );
+    console.log( "Video/OGG support: " + html5checker.canplayogg );
+    console.log( "Video/Webm support: " + html5checker.canplaywebm );
+    console.log( "localStorage support: " + html5checker.localStorage );
+    console.log( "Webworker support: " + html5checker.webWorker );
+    console.log( "offline support: " + html5checker.applicationCashe );
+    console.log( "geolocation support: " + html5checker.geolocation );
 
     // the inputs 13 attributes
     console.log( "Checking new input attributes ..." );
-    console.log( "search: " html5checker.search );
-    console.log( "search: " html5checker.number );
-    console.log( "search: " html5checker.range );
-    console.log( "search: " html5checker.color );
-    console.log( "search: " html5checker.tel );
-    console.log( "search: " html5checker.url );
-    console.log( "search: " html5checker.email );
-    console.log( "search: " html5checker.date );
-    console.log( "search: " html5checker.month );
-    console.log( "search: " html5checker.week );
-    console.log( "search: " html5checker.time );
-    console.log( "search: " html5checker.datetime );
-    console.log( "search: " html5checker.datetime_local );
+    console.log( "search: " + html5checker.search );
+    console.log( "search: " + html5checker.number );
+    console.log( "search: " + html5checker.range );
+    console.log( "search: " + html5checker.color );
+    console.log( "search: " + html5checker.tel );
+    console.log( "search: " + html5checker.url );
+    console.log( "search: " + html5checker.email );
+    console.log( "search: " + html5checker.date );
+    console.log( "search: " + html5checker.month );
+    console.log( "search: " + html5checker.week );
+    console.log( "search: " + html5checker.time );
+    console.log( "search: " + html5checker.datetime );
+    console.log( "search: " + html5checker.datetime_local );
 
     }
 
@@ -69,7 +70,7 @@ function supports_canvas(){
     /*  check the support of the canvas by creating canvas element and checking
     if there is getContext method in it
     checking method : creating element, checking if certain property exist for it or not*/
-    html5checker.canvas == !! document.createElement( 'canvas' ).getContext;
+    html5checker.canvas == !!document.createElement( 'canvas' ).getContext;
 }
 
 function supports_canvas_text() {
@@ -171,7 +172,7 @@ function support_inputAttributes() {
     if ( date.type !== "text" ) { html5checker.date == true; }
     if ( month.type !== "text" ) { html5checker.month == true; }
     if ( week.type !== "text" ) { html5checker.week == true; }
-    if ( time.type !== "text" ) { html5checker. == true; }
+    if ( time.type !== "text" ) { html5checker.time == true; }
     if ( datetime.type !== "text" ) { html5checker.datetime == true; }
     if ( datetime_local.type !== "text" ) { html5checker.datetime_local == true; }
 
