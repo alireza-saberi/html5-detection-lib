@@ -2,7 +2,7 @@
 * @Author: Ali
 * @Date:   2016-08-20 05:26:39
 * @Last Modified by:   Ali
-* @Last Modified time: 2016-08-21 12:35:39
+* @Last Modified time: 2016-08-21 15:07:58
 */
 /*This JS file is based on up and running HTML5 book*/
 
@@ -20,7 +20,20 @@ function html5checker_init(){
         localStorage: false,
         webWorker: false,
         applicationCashe: false,
-        geolocation : false
+        geolocation : false,
+        search: false,
+        number: false,
+        range: false,
+        color:  false,
+        tel: false,
+        url: false,
+        email: false,
+        date: false,
+        month: false,
+        week: false,
+        time: false,
+        datetime: false,
+        datetime_local: false
 
     }
     console.log( "Canvas support: " html5checker.canvas );
@@ -33,6 +46,23 @@ function html5checker_init(){
     console.log( "Webworker support: " html5checker.webWorker );
     console.log( "offline support: " html5checker.applicationCashe );
     console.log( "geolocation support: " html5checker.geolocation );
+
+    // the inputs 13 attributes
+    console.log( "Checking new input attributes ..." );
+    console.log( "search: " html5checker.search );
+    console.log( "search: " html5checker.number );
+    console.log( "search: " html5checker.range );
+    console.log( "search: " html5checker.color );
+    console.log( "search: " html5checker.tel );
+    console.log( "search: " html5checker.url );
+    console.log( "search: " html5checker.email );
+    console.log( "search: " html5checker.date );
+    console.log( "search: " html5checker.month );
+    console.log( "search: " html5checker.week );
+    console.log( "search: " html5checker.time );
+    console.log( "search: " html5checker.datetime );
+    console.log( "search: " html5checker.datetime_local );
+
     }
 
 function supports_canvas(){
@@ -71,9 +101,10 @@ function support_videoformat(){
     checking method : creating element, check if certain methods are in it, then call the method by passing certain values to them
     */
     if ( !html5checker.canplayvideo ){
-        html5checker.canplaymp4 == document.createElement("video").canPlayType('video/mp4; codecs="avc1.42E01E, mp4a.40.2"');
-        html5checker.canplayogg == document.createElement("video").canPlayType('video/ogg; codecs="theora, vorbis"');
-        html5checker.canplaywebm == document.createElement("video").canPlayType('video/webm; codecs="vp8, vorbis"');
+    } else {
+            html5checker.canplaymp4 == document.createElement("video").canPlayType('video/mp4; codecs="avc1.42E01E, mp4a.40.2"');
+            html5checker.canplayogg == document.createElement("video").canPlayType('video/ogg; codecs="theora, vorbis"');
+            html5checker.canplaywebm == document.createElement("video").canPlayType('video/webm; codecs="vp8, vorbis"');
     }
 }
 
@@ -110,4 +141,38 @@ function support_geolocation() {
     if ( !!navigator.geolocation ) {
         html5checker.geolocation == true;
     }
+}
+
+function support_inputAttributes() {
+    /*It checks if browser supports new input attributes; search, number, range, color, tel, url, email, date, month, week, time, datetime, datetime-local
+     checking method: set a property to a certain value, then check if the property has retained its value
+    */
+    var search = document.createElement("input").setAttribute("type", "search");
+    var number = document.createElement("input").setAttribute("type", "number");
+    var range = document.createElement("input").setAttribute("type", "range");
+    var color = document.createElement("input").setAttribute("type", "color");
+    var tel = document.createElement("input").setAttribute("type", "tel");
+    var url = document.createElement("input").setAttribute("type", "url");
+    var email = document.createElement("input").setAttribute("type", "email");
+    var date = document.createElement("input").setAttribute("type", "date");
+    var month = document.createElement("input").setAttribute("type", "month");
+    var week = document.createElement("input").setAttribute("type", "week");
+    var time = document.createElement("input").setAttribute("type", "time");
+    var datetime = document.createElement("input").setAttribute("type", "datetime");
+    var datetime_local = document.createElement("input").setAttribute("type", "datetime-local");
+
+    if ( search.type !== "text" ) { html5checker.search == true; }
+    if ( number.type !== "text" ) { html5checker.number == true; }
+    if ( range.type !== "text" ) { html5checker.range == true; }
+    if ( color.type !== "text" ) { html5checker.color == true; }
+    if ( tel.type !== "text" ) { html5checker.tel == true; }
+    if ( url.type !== "text" ) { html5checker.url == true; }
+    if ( email.type !== "text" ) { html5checker.email == true; }
+    if ( date.type !== "text" ) { html5checker.date == true; }
+    if ( month.type !== "text" ) { html5checker.month == true; }
+    if ( week.type !== "text" ) { html5checker.week == true; }
+    if ( time.type !== "text" ) { html5checker. == true; }
+    if ( datetime.type !== "text" ) { html5checker.datetime == true; }
+    if ( datetime_local.type !== "text" ) { html5checker.datetime_local == true; }
+
 }
