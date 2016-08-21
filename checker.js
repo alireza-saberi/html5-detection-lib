@@ -2,7 +2,7 @@
 * @Author: Ali
 * @Date:   2016-08-20 05:26:39
 * @Last Modified by:   Ali
-* @Last Modified time: 2016-08-21 10:22:48
+* @Last Modified time: 2016-08-21 11:50:18
 */
 /*This JS file is based on up and running HTML5 book*/
 
@@ -17,7 +17,8 @@ function html5checker_init(){
         canplaymp4: "",
         canplayogg: "",
         canplaywebm: "",
-        localStorage: false
+        localStorage: false,
+        webWorker: false
 
     }
     console.log( "Canvas support: " html5checker.canvas );
@@ -26,6 +27,9 @@ function html5checker_init(){
     console.log( "Video/MP4 support: " html5checker.canplaymp4 );
     console.log( "Video/OGG support: " html5checker.canplayogg );
     console.log( "Video/Webm support: " html5checker.canplaywebm );
+    console.log( "localStorage support: " html5checker.localStorage );
+    console.log( "Webworker support: " html5checker.localStorage );
+
     }
 
 function supports_canvas(){
@@ -77,4 +81,13 @@ function support_localStorage(){
         html5checker.localStorage == true;
     }
 }
+
+function support_webWorker(){
+    /*It checks if the browser is suppporting multi-threding in it or not aka webworker
+    checking method: if Worker exists in window object*/
+    if ( !!window.Worker ) {
+        html5checker.webworker == true;
+    }
+}
+
 
