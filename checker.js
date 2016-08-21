@@ -2,7 +2,7 @@
 * @Author: Ali
 * @Date:   2016-08-20 05:26:39
 * @Last Modified by:   Ali
-* @Last Modified time: 2016-08-21 11:50:18
+* @Last Modified time: 2016-08-21 12:14:28
 */
 /*This JS file is based on up and running HTML5 book*/
 
@@ -18,7 +18,8 @@ function html5checker_init(){
         canplayogg: "",
         canplaywebm: "",
         localStorage: false,
-        webWorker: false
+        webWorker: false,
+        applicationCashe: false
 
     }
     console.log( "Canvas support: " html5checker.canvas );
@@ -28,7 +29,8 @@ function html5checker_init(){
     console.log( "Video/OGG support: " html5checker.canplayogg );
     console.log( "Video/Webm support: " html5checker.canplaywebm );
     console.log( "localStorage support: " html5checker.localStorage );
-    console.log( "Webworker support: " html5checker.localStorage );
+    console.log( "Webworker support: " html5checker.webWorker );
+    console.log( "offline support: " html5checker.applicationCashe );
 
     }
 
@@ -57,7 +59,7 @@ function support_videoplay(){
     /*It checks if the browser is capable of playing video
     checking method : creating element, checking if certain property exist for it or not.
     Here, it's canPlayType */
-    if ( !!document.createElement('video').cabPlayType ) {
+    if ( !!document.createElement('video').canPlayType ) {
         html5checker.canplayvideo == true;
     }
 }
@@ -86,8 +88,15 @@ function support_webWorker(){
     /*It checks if the browser is suppporting multi-threding in it or not aka webworker
     checking method: if Worker exists in window object*/
     if ( !!window.Worker ) {
-        html5checker.webworker == true;
+        html5checker.webWorker == true;
     }
 }
 
-
+function support_offline() {
+    /*It checks if the browser supports off-line web applications after the first visit (aka offline web application, or application cache)
+    checking method: if applicationCash exists in window object
+    */
+    if ( !!window.applicationCashe ) {
+        html5checker.applicationCashe == true;
+    }
+}
