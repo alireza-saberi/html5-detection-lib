@@ -2,7 +2,7 @@
 * @Author: Ali
 * @Date:   2016-08-20 05:26:39
 * @Last Modified by:   Ali
-* @Last Modified time: 2016-08-21 15:23:33
+* @Last Modified time: 2016-08-21 15:39:20
 */
 /*This JS file is based on up and running HTML5 book*/
 
@@ -33,9 +33,10 @@ function html5checker_init(){
         week: false,
         time: false,
         datetime: false,
-        datetime_local: false
+        datetime_local: false,
+        placeholder: false
 
-    }
+    };
 
     console.log( "Canvas support: " + html5checker.canvas );
     console.log( "Canvas text support: " + html5checker.canvastext );
@@ -51,18 +52,20 @@ function html5checker_init(){
     // the inputs 13 attributes
     console.log( "Checking new input attributes ..." );
     console.log( "search: " + html5checker.search );
-    console.log( "search: " + html5checker.number );
-    console.log( "search: " + html5checker.range );
-    console.log( "search: " + html5checker.color );
-    console.log( "search: " + html5checker.tel );
-    console.log( "search: " + html5checker.url );
-    console.log( "search: " + html5checker.email );
-    console.log( "search: " + html5checker.date );
-    console.log( "search: " + html5checker.month );
-    console.log( "search: " + html5checker.week );
-    console.log( "search: " + html5checker.time );
-    console.log( "search: " + html5checker.datetime );
-    console.log( "search: " + html5checker.datetime_local );
+    console.log( "number: " + html5checker.number );
+    console.log( "range: " + html5checker.range );
+    console.log( "color: " + html5checker.color );
+    console.log( "tel: " + html5checker.tel );
+    console.log( "url: " + html5checker.url );
+    console.log( "email: " + html5checker.email );
+    console.log( "date: " + html5checker.date );
+    console.log( "month: " + html5checker.month );
+    console.log( "week: " + html5checker.week );
+    console.log( "time: " + html5checker.time );
+    console.log( "datetime: " + html5checker.datetime );
+    console.log( "datetime-local: " + html5checker.datetime_local );
+
+    console.log( "Input placeholder: " + html5checker.placeholder );
 
     }
 
@@ -177,3 +180,11 @@ function support_inputAttributes() {
     if ( datetime_local.type !== "text" ) { html5checker.datetime_local == true; }
 
 }
+
+function support_inputPlaceholder() {
+    var input = document.createElement("input");
+    if ( "placeholder" in input) {
+        html5checker.placeholder == true;
+    }
+}
+
