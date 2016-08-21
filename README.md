@@ -12,7 +12,7 @@ There are four techniques that you can you use for detection of features:
 4. Create an element, set a property to a certain value, then check if the property has retained its value, that can be user for new types of inputs in MTML5
 
 
-I also tried the famous [video for eveybody codes](http://camendesign.com/code/video_for_everybody). Yopu can find video for everybody generator [here](http://v4e.thewikies.com/)
+I also tried the famous [video for eveybody codes](http://camendesign.com/code/video_for_everybody). Ypu can find video for everybody generator [here](http://v4e.thewikies.com/)
 
 More usefuil links:
 
