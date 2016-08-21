@@ -2,7 +2,7 @@
 * @Author: Ali
 * @Date:   2016-08-20 05:26:39
 * @Last Modified by:   Ali
-* @Last Modified time: 2016-08-21 12:14:28
+* @Last Modified time: 2016-08-21 12:35:39
 */
 /*This JS file is based on up and running HTML5 book*/
 
@@ -19,7 +19,8 @@ function html5checker_init(){
         canplaywebm: "",
         localStorage: false,
         webWorker: false,
-        applicationCashe: false
+        applicationCashe: false,
+        geolocation : false
 
     }
     console.log( "Canvas support: " html5checker.canvas );
@@ -31,7 +32,7 @@ function html5checker_init(){
     console.log( "localStorage support: " html5checker.localStorage );
     console.log( "Webworker support: " html5checker.webWorker );
     console.log( "offline support: " html5checker.applicationCashe );
-
+    console.log( "geolocation support: " html5checker.geolocation );
     }
 
 function supports_canvas(){
@@ -98,5 +99,15 @@ function support_offline() {
     */
     if ( !!window.applicationCashe ) {
         html5checker.applicationCashe == true;
+    }
+}
+
+function support_geolocation() {
+    /*It checks if the browser supports geolocation; Geolocation support is being added to browsers right now, along with support for new HTML5 features.
+     Strictly speaking, geolocation is being standardized by the Geolocation Working Group, which is separate from the HTML5 Working Group.
+    checking method: if geolocation exists in navigator object
+     */
+    if ( !!navigator.geolocation ) {
+        html5checker.geolocation == true;
     }
 }
